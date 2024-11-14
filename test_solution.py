@@ -50,4 +50,6 @@ class Testseven_segmentify(unittest.TestCase):
     _     _  _ 
   || | . |_ |_|
   ||_| .  _| _|"""[1:])
-        
+
+if __name__ == "__main__":
+    unittest.main()

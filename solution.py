@@ -11,11 +11,12 @@ def seven_segmentify(time_: str) -> str:
         '7': [" _ ", " |", " |"],
         '8': [" _ ", "|_|", "|_|"],
         '9': [" _ ", "|_|", " _|"],
-        ':': ["   ", " . ", " . "]
+        ':': ["   ", " . ", " . "],
+        ' ': ["   ", "   ", "   "]
     }
 
     if time_[0] == "0":
-        time_ = time_[1:]
+        time_ = " " + time_[1:]
 
     horas, minutos = time_.split(':')
 
@@ -24,8 +25,8 @@ def seven_segmentify(time_: str) -> str:
     linha3 = []
 
     for char in horas + ':' + minutos:
-        linha1.append(digitos[char][0])
-        linha2.append(digitos[char][1])
-        linha3.append(digitos[char][2])
+            linha1.append(digitos[char][0])
+            linha2.append(digitos[char][1])
+            linha3.append(digitos[char][2])
 
     return '\n'.join([''.join(linha1), ''.join(linha2), ''.join(linha3)])
